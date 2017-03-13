@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="The new trello is here : The_Trello !">
+        <meta name="author" content="David GAUTHIER">
+
+        <link rel="icon" href="{{ asset('bundles/app/images/logo-the_trello.png') }}">
+
+        <title>{% block title %}The Trello{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+            <link href="{{ asset('bundles/app/css/app.css') }}" rel="stylesheet">
+        {% endblock %}
+
+    </head>
+
+    <body>
+        {{ include("::include/navbar.html.twig") }}
+
+        <div class="container-fluid" style="padding-top:100px;">
+
+            {% block body %}{% endblock %}
+
+            {{ include("::include/footer.html.twig") }}
+
+        </div> <!-- /container fluid -->
+
+        {% block javascripts %}
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </body>
+
+</html>
