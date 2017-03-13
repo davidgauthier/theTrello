@@ -1,0 +1,70 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Home
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="row">
+        {# On boucle sur les categories #}
+        {% for index, category in listCategories %}
+
+            <div class="col-md-3">
+
+                <h2>{{ category.name }} <span class="badge">{{ category.tasks|length }}</span>
+                    {#<span class="pull-right">btns</span>#}
+                </h2>
+
+                {# On boucle sur les taches d'une categorie #}
+                {% for index2, task in category.tasks %}
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4>
+                                {{ task.name }}
+                                <span class="pull-right">btns</span></h4>
+                            <p>{{ task.description }}</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div> <!-- end .col-md-3 -->
+
+        {% else %}
+
+            <p>Aucune catégorie ...</p>
+
+        {% endfor %}
+
+
+
+
+    </div> <!-- end .row -->
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
