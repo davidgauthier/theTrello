@@ -16,18 +16,21 @@
         <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
+                {#<li><a href="{{ path('app_task_new') }}">Ajouter une tache</a></li>#}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><a href="{{ path('app_task_new') }}">Ajouter une tache</a></li>
+                {% endif %}
+            </ul>
 
-                {% if is_granted('ROLE_USER') %}
+            <ul class="nav navbar-nav navbar-right">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <p class="navbar-text">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</p>
                     <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
                 {% else %}
                     <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
                     <li><a href="{{ path('fos_user_registration_register') }}">Créer un compte</a>
                     </li>
                 {% endif %}
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ path('app_task_new') }}">Ajouter une tache</a></li>
             </ul>
 
         </div>
