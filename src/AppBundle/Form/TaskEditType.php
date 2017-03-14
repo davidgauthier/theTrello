@@ -4,11 +4,6 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
-use AppBundle\Form\TaskType;
 
 class TaskEditType extends AbstractType
 {
@@ -26,6 +21,4 @@ class TaskEditType extends AbstractType
     {
         return TaskType::class;
     }
-
-
 }

@@ -11,38 +11,36 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
-
     /**
      * @var ContainerInterface
      */
     private $container;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container = null) {
+    public function setContainer(ContainerInterface $container = null)
+    {
         $this->container = $container;
     }
-
 
     public function load(ObjectManager $manager)
     {
         // Get our userManager, you must implement `ContainerAwareInterface`
         $userManager = $this->container->get('fos_user.user_manager');
 
-
-        $userData = array(
-            array(
-                'username'  => 'david',
-                'email'     => 'david@thetrello.com',
-                'password'  => 'david',
-            ),
-            array(
-                'username'  => 'toto',
-                'email'     => 'toto@thetrello.com',
-                'password'  => 'toto',
-            ),
-        );
+        $userData = [
+            [
+                'username' => 'david',
+                'email' => 'david@thetrello.com',
+                'password' => 'david',
+            ],
+            [
+                'username' => 'toto',
+                'email' => 'toto@thetrello.com',
+                'password' => 'toto',
+            ],
+        ];
 
         foreach ($userData as $i => $userData) {
             $user = $userManager->createUser();

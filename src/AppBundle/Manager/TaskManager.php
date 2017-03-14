@@ -27,17 +27,14 @@ class TaskManager
         return new Task();
     }
 
-
     /**
      * @param Task $task
      */
     public function save(Task $task)
     {
-        if(null === $task->getId()) {
+        if (null === $task->getId()) {
             $this->em->persist($task);
         }
         $this->em->flush();
     }
-
-
 }

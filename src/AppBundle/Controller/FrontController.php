@@ -8,8 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class FrontController extends Controller
 {
-
-
     /**
      * @Route("/", name="app_homepage", methods={"GET"})
      */
@@ -22,10 +20,5 @@ class FrontController extends Controller
                 //'listCategories' => array(),
             ]
         );
-
     }
-
-
-
-
 }

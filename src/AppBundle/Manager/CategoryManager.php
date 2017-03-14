@@ -27,19 +27,16 @@ class CategoryManager
         return new Category();
     }
 
-
     /**
      * @param Category $category
      */
     public function save(Category $category)
     {
-        if(null === $category->getId()) {
+        if (null === $category->getId()) {
             $this->em->persist($category);
         }
         $this->em->flush();
     }
-
-
 
     public function getAll()
     {

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Category
+ * Category.
  *
  * @ORM\Table(name="category")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
@@ -51,9 +51,8 @@ class Category
         $this->tasks = new ArrayCollection();
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -63,7 +62,7 @@ class Category
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -77,7 +76,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -87,7 +86,7 @@ class Category
     }
 
     /**
-     * Add task
+     * Add task.
      *
      * @param \AppBundle\Entity\Task $task
      *
@@ -101,7 +100,7 @@ class Category
     }
 
     /**
-     * Remove task
+     * Remove task.
      *
      * @param \AppBundle\Entity\Task $task
      */
@@ -111,7 +110,7 @@ class Category
     }
 
     /**
-     * Get tasks
+     * Get tasks.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

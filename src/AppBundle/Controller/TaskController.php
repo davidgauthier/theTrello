@@ -3,18 +3,14 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Task;
-use AppBundle\Entity\Category;
-use AppBundle\Form\TaskType;
 use AppBundle\Form\TaskEditType;
-
+use AppBundle\Form\TaskType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class TaskController extends Controller
 {
-
-
     /**
      * @Route("/task/new/", name="app_task_new", methods={"GET", "POST"} )
      */
@@ -57,11 +53,6 @@ class TaskController extends Controller
         );
     }
 
-
-
-
-
-
     /**
      * @Route("/task/edit/{idTask}", name="app_task_edit", methods={"GET", "POST"} )
      */
@@ -74,7 +65,7 @@ class TaskController extends Controller
         $task = $taskRepository->findOneById($idTask);
 
         if (null === $task) {
-            throw  $this->createNotFoundException("Task does not exists");
+            throw  $this->createNotFoundException('Task does not exists');
         }
 
         // On récup le form
@@ -108,14 +99,4 @@ class TaskController extends Controller
             ]
         );
     }
-
-
-
-
-
-
-
-
-
-
 }

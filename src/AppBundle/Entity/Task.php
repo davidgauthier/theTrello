@@ -5,22 +5,16 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
-
-
-
 /**
- * Task
+ * Task.
  *
  * @ORM\Table(name="task")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  */
 class Task
 {
-
     const STATUS_OPEN = 'open';
     const STATUS_CLOSED = 'closed';
-
 
     /**
      * @var int
@@ -60,13 +54,11 @@ class Task
      */
     private $status;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="tasks")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
-
 
     /**
      * Task constructor.
@@ -76,9 +68,8 @@ class Task
         $this->status = self::STATUS_OPEN;
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -88,7 +79,7 @@ class Task
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -102,7 +93,7 @@ class Task
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -112,7 +103,7 @@ class Task
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -126,7 +117,7 @@ class Task
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -136,7 +127,7 @@ class Task
     }
 
     /**
-     * Set status
+     * Set status.
      *
      * @param string $status
      *
@@ -150,7 +141,7 @@ class Task
     }
 
     /**
-     * Get status
+     * Get status.
      *
      * @return string
      */
@@ -160,7 +151,7 @@ class Task
     }
 
     /**
-     * Set category
+     * Set category.
      *
      * @param \AppBundle\Entity\Category $category
      *
@@ -174,7 +165,7 @@ class Task
     }
 
     /**
-     * Get category
+     * Get category.
      *
      * @return \AppBundle\Entity\Category
      */
