@@ -37,6 +37,8 @@ class Category
     private $name;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Task", mappedBy="category")
      */
     private $tasks;

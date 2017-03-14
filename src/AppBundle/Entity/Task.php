@@ -5,6 +5,11 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
+
+const STATUS_OPEN = 'open';
+const STATUS_CLOSED = 'closed';
+
 /**
  * Task
  *
@@ -64,7 +69,7 @@ class Task
      */
     public function __construct()
     {
-
+        $this->status = STATUS_OPEN;
     }
 
 
