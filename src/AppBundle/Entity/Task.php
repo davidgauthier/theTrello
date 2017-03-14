@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Task
@@ -23,6 +24,14 @@ class Task
 
     /**
      * @var string
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 10,
+     *      max=255,
+     *      minMessage = "The name length can't be less than {{ limit }} char",
+     *      maxMessage="The name length can't be more than {{ limit }} char"
+     * )
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
