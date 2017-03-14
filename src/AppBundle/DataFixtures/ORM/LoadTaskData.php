@@ -16,31 +16,31 @@ class LoadTaskData extends AbstractFixture implements OrderedFixtureInterface
             array(
                 'name'          => 'modif page accueil',
                 'description'   => 'Modifier la page d\'accueil en ajoutant des choses importantes',
-                'status'        => 'open',
+                'status'        => Task::STATUS_OPEN,
                 'category'      => $this->getReference('category-1'),
             ),
             array(
                 'name'          => 'modif page accueil 2',
                 'description'   => 'Modifier la page d\'accueil en ajoutant des choses peu importantes',
-                'status'        => 'open',
+                'status'        => Task::STATUS_OPEN,
                 'category'      => $this->getReference('category-0'),
             ),
             array(
                 'name'          => 'modif page profil',
                 'description'   => 'Modifier la page profil en ajoutant des choses importantes',
-                'status'        => 'open',
+                'status'        => Task::STATUS_OPEN,
                 'category'      => $this->getReference('category-1'),
             ),
             array(
                 'name'          => 'modif trucs',
                 'description'   => 'Modifier quelques trucs',
-                'status'        => 'open',
+                'status'        => Task::STATUS_OPEN,
                 'category'      => $this->getReference('category-1'),
             ),
             array(
                 'name'          => 'modifier ce que tu sais',
                 'description'   => 'C\'est fini ça ?!?',
-                'status'        => 'closed',
+                'status'        => Task::STATUS_CLOSED,
                 'category'      => $this->getReference('category-3'),
             ),
         );

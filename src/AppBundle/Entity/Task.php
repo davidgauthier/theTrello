@@ -7,8 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 
-const STATUS_OPEN = 'open';
-const STATUS_CLOSED = 'closed';
+
 
 /**
  * Task
@@ -18,6 +17,11 @@ const STATUS_CLOSED = 'closed';
  */
 class Task
 {
+
+    const STATUS_OPEN = 'open';
+    const STATUS_CLOSED = 'closed';
+
+
     /**
      * @var int
      *
