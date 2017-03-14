@@ -9,7 +9,7 @@
 {% endblock %}
 
 
-{% block body %}
+{% block content %}
 
     <div class="row">
         {# On boucle sur les categories #}
@@ -28,7 +28,10 @@
                         <div class="panel-body">
                             <h4>
                                 {{ task.name }}
-                                <span class="pull-right">btns</span></h4>
+                                <a href="{{ path('app_task_edit', {'idTask': task.id}) }}" class="btn btn-default  pull-right">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </a>
+                            </h4>
                             <p>{{ task.description }}</p>
                         </div>
                     </div>
