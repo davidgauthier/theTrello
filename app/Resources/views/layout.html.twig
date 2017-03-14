@@ -24,13 +24,15 @@
     <body>
         {{ include("::include/navbar.html.twig") }}
 
-        <div class="container-fluid" style="padding-top:100px;">
+        <div class="container">
 
             {% block content %}{% endblock %}
 
-            {{ include("::include/footer.html.twig") }}
-
         </div> <!-- /container fluid -->
+
+
+        {{ include("::include/footer.html.twig") }}
+
 
         {% block javascripts %}
             <!-- jQuery library -->

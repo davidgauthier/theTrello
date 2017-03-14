@@ -36,8 +36,8 @@ class Task
      *
      * @Assert\NotBlank()
      * @Assert\Length(
-     *      min = 10,
-     *      max=255,
+     *      min = 3,
+     *      max = 255,
      *      minMessage = "The name length can't be less than {{ limit }} char",
      *      maxMessage="The name length can't be more than {{ limit }} char"
      * )
@@ -73,7 +73,7 @@ class Task
      */
     public function __construct()
     {
-        $this->status = STATUS_OPEN;
+        $this->status = self::STATUS_OPEN;
     }
 
 

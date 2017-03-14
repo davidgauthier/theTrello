@@ -25,13 +25,16 @@
                 {% for index2, task in category.tasks %}
 
                     <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h4>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
                                 {{ task.name }}
-                                <a href="{{ path('app_task_edit', {'idTask': task.id}) }}" class="btn btn-default  pull-right">
+                                <a href="{{ path('app_task_edit', {'idTask': task.id}) }}" class="btn btn-default btn-xs pull-right">
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                 </a>
-                            </h4>
+                            </h3>
+
+                        </div>
+                        <div class="panel-body">
                             <p>{{ task.description }}</p>
                         </div>
                     </div>
