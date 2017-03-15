@@ -98,7 +98,8 @@ fos_rest:
             - { path: '^/api', priorities: ['json'], fallback_format: json, prefer_extension: false }
             - { path: '^/', stop: true }
 
-
+#NelmioApiDocBundle
+nelmio_api_doc: ~
 
 
 

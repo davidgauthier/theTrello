@@ -1,26 +1,24 @@
 <?php
 namespace AppBundle\Serializer\Normalizer;
-use AppBundle\Entity\User;
+use AppBundle\Entity\Category;
 use AppBundle\Manager\PriceManager;
 use AppBundle\Manager\TravelManager;
 use AppBundle\Manager\TravelRateManager;
 
 /**
- * UserNormalizer.
+ * CategoryNormalizer.
  */
-class UserNormalizer extends AbstractNormalizer
+class CategoryNormalizer extends AbstractNormalizer
 {
     /**
      * {@inheritdoc}
      */
     public function normalize($object, $format = null, array $context = [])
     {
-        /* @var User $object */
+        /* @var Category $object */
         $data = [
-            'id'        => $object->getId(),
-            'username'  => $object->getUsername(),
-            'email'     => $object->getEmail(),
-            //'category' => $this->normalizeObject($object->getCategory(), $format, $context),
+            'id'    => $object->getId(),
+            'name'  => $object->getName(),
         ];
         return $data;
     }
@@ -31,7 +29,7 @@ class UserNormalizer extends AbstractNormalizer
      */
     public function supportsNormalization($data, $format = null)
     {
-        return $data instanceof User;
+        return $data instanceof Category;
     }
 
 }

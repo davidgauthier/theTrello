@@ -37,4 +37,16 @@ class TaskManager
         }
         $this->em->flush();
     }
+
+    /**
+     * @return array
+     */
+    public function getAll()
+    {
+        $taskRepository = $this->em->getRepository(Task::class);
+        //$categoryRepository = $this->em->getRepository('AppBundle:Category');
+
+        return $taskRepository->findAll();
+    }
+
 }
