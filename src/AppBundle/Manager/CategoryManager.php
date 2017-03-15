@@ -38,6 +38,9 @@ class CategoryManager
         $this->em->flush();
     }
 
+    /**
+     * @return array
+     */
     public function getAll()
     {
         $categoryRepository = $this->em->getRepository(Category::class);

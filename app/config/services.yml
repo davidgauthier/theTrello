@@ -8,6 +8,18 @@ services:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
 
+
+    app.normalizer.user:
+            class: AppBundle\Serializer\Normalizer\UserNormalizer
+            tags:
+                - { name: serializer.normalizer }
+
+
+    app.normalizer.category:
+            class: AppBundle\Serializer\Normalizer\CategoryNormalizer
+            tags:
+                - { name: serializer.normalizer }
+
 imports:
     - { resource: '@AppBundle/Resources/config/services.yml' }
 
